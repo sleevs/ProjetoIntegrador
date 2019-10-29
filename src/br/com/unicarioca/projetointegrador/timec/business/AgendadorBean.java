@@ -3,6 +3,7 @@ package br.com.unicarioca.projetointegrador.timec.business;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.ejb.EJB;
 import javax.ejb.Schedule;
 import javax.ejb.ScheduleExpression;
 import javax.ejb.Stateless;
@@ -13,12 +14,9 @@ import br.com.unicarioca.projetointegrador.timec.model.ExameModel;
 
 /**
  *
- * @author Willy 1.0
+* @author Willy 1.0
  * @author jeison  1.1
- */
-
-
-/*
+ *
  * backlog: Push de Notificação por email de Agendamento de Exame 
  * Background:  
  * Scenario: Eu como beneficiário da empresa 
@@ -30,15 +28,20 @@ import br.com.unicarioca.projetointegrador.timec.model.ExameModel;
 public class AgendadorBean  {
 
 	
+	@EJB
+	ExameBusiness exameBusiness;
 	
 	
-	// @Schedule(second = "*/10", hour = "*", minute = "*")
+	
 	 public void teste() {
 	        System.out.println("agendado pela anotacao @Schedule");
 	    }
 
-	 public void notificarExamesRealizados( List<ExameModel> listaDeExames) {
-	        System.out.println("agendado pela anotacao @Schedule");
+	 @Schedule(second = "*/10", hour = "*", minute = "*")
+	 public void notificarExamesRealizados() {
+		  System.out.println("INICIALIZAR VARREDURA DE NOTIFICAÇÃO");
+		  List<ExameModel> examesNotificados =  exameBusiness.noficicarExame();
+	        System.out.println( " EXAMES NOTIFICADOS : " + examesNotificados.size());
 	    }
 
 	 

@@ -33,5 +33,14 @@ public class BeneficiarioBusiness {
 		return beneficiarioDao.buscarBeneficiario(lista);
 		
 	}
+    
+    
+    
+public BeneficiarioModel bucarBeneficiariosPorMatricula(Integer b){
+		
+		
+		return beneficiarioDao.find(b);
+		
+	}
 	
 }

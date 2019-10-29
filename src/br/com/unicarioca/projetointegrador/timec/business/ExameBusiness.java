@@ -30,6 +30,8 @@ public class ExameBusiness {
 	@EJB
 	ExameDao exameDao ;
 	
+	@EJB
+	BeneficiarioBusiness beneficiarioBusiness;
 	
 //	@EJB
 //	EmailBusiness emailBusiness;
@@ -68,26 +70,25 @@ public class ExameBusiness {
 	  Então enviar notificação de confirmação do exame 
 	*/
 	
-   public void noficicarExame() {
-/*
-	   String meuEmail = "jsnprogramer@gmail.com";
-		String senha = "Guitarra$13";
-		SimpleEmail email = new SimpleEmail();
-		email.setHostName("smtp.gmail.com");
-		email.setSmtpPort(465);
-		email.setAuthenticator(new DefaultAuthenticator(meuEmail, senha));
-		email.setSSLOnConnect(true);
-		
-		try {
-			email.setFrom(meuEmail);
-			email.setSubject("TREINO EMAIL GOOGLE");
-			email.setMsg("Desenvolvedor Jeison Muniz ALUNO UNICARIOCA TESTE DE SERVIÇO EMAIL UTILIZANDO SERVIDOR smtp.gmail.com da Google");
-		    email.addTo(meuEmail);
-			email.send();
-		}catch(Exception e) {
-			
-		}
-		*/
+   public List<ExameModel> noficicarExame() {
+
+	  
+	   List<ExameModel> listaExames = exameDao.localizarExames();
+	   
+	   for (ExameModel e : listaExames) {
+	
+		   Integer m = e.getIdBeneficiario();
+		   BeneficiarioModel b = beneficiarioBusiness.bucarBeneficiariosPorMatricula(m);
+	
+		   EmailBusiness emailBusiness = new EmailBusiness();
+		   emailBusiness.enviarEmail(b.getEmail(), e.getDescricao(), e.getStatus());
+		   e.setDsNotificacao("ENVIADO");  
+		   exameDao.edit(e);
+	   }
+	   
+	
+	   
+	   return exameDao.localizarExamesNotificados();
 	  
     }
 	

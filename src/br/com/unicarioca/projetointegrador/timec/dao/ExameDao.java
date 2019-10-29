@@ -55,5 +55,19 @@ public class ExameDao extends AbstractFacade<ExameModel> {
 		return null;
 	}
 	
+	
+	public List<ExameModel> localizarExamesNotificados(){
+		String valor = "Enviado";
+		
+		try {
+			Query query = em.createQuery("SELECT e FROM ExameModel e WHERE e.dsNotificacao = :tipo", ExameModel.class)
+					.setParameter("tipo", valor);
+			return (List<ExameModel>) query.getResultList();
+		} catch (Exception e) {
+
+		}
+
+		return null;
+	}
 
 }

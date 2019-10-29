@@ -11,8 +11,7 @@ import org.apache.commons.mail.SimpleEmail;
 public class EmailBusiness  {
 
 
-	/*
-	public void enviarEmail(String emailDestino) {
+	public void enviarEmail(String emailDestino, String descricao, String assunto) {
 		
 		String meuEmail = "jsnprogramer@gmail.com";
 		String senha = "Guitarra$13";
@@ -24,8 +23,8 @@ public class EmailBusiness  {
 		
 		try {
 			email.setFrom(emailDestino);
-			email.setSubject("TREINO EMAIL GOOGLE");
-			email.setMsg("Desenvolvedor Jeison Muniz ALUNO UNICARIOCA TESTE DE SERVIÇO EMAIL UTILIZANDO SERVIDOR smtp.gmail.com da Google");
+			email.setSubject(assunto);
+			email.setMsg(descricao);
 		    email.addTo(emailDestino);
 			email.send();
 		}catch(Exception e) {
@@ -34,5 +33,5 @@ public class EmailBusiness  {
 		
 		
 	}
-*/
+
 }
