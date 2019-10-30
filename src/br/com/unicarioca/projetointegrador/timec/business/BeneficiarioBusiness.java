@@ -8,6 +8,16 @@ import javax.ejb.Stateless;
 import br.com.unicarioca.projetointegrador.timec.dao.BeneficiarioDao;
 import br.com.unicarioca.projetointegrador.timec.model.BeneficiarioModel;
 
+
+/*autor: jeison muniz 1.0
+ * backlog: GERENCIAR DADOS DO BENEFICIARIO
+ * Background:  
+ * cenario: classe responsavel por gerenciar os dados do beneficiario
+* 
+
+*/
+
+
 @Stateless
 public class BeneficiarioBusiness {
 
