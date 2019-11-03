@@ -35,4 +35,11 @@ public class ReembolsoDao extends AbstractFacade<ReembolsoModel> {
 		return em;
 	}
 
+	
+	
+	public ReembolsoModel criarSolicitacaoReembolso(ReembolsoModel r){
+		em.persist(r);
+		em.flush();
+		return em.find(ReembolsoModel.class, r.getReembolsoId());
+	}
 }
