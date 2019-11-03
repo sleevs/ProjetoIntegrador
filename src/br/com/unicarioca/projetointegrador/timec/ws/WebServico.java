@@ -13,8 +13,10 @@ import br.com.unicarioca.projetointegrador.timec.business.BeneficiarioBusiness;
 import br.com.unicarioca.projetointegrador.timec.business.CoreBusiness;
 import br.com.unicarioca.projetointegrador.timec.business.EmailBusiness;
 import br.com.unicarioca.projetointegrador.timec.business.ExameBusiness;
+import br.com.unicarioca.projetointegrador.timec.business.ReembolsoBusiness;
 import br.com.unicarioca.projetointegrador.timec.model.BeneficiarioModel;
 import br.com.unicarioca.projetointegrador.timec.model.ExameModel;
+import br.com.unicarioca.projetointegrador.timec.model.ReembolsoModel;
 
 /*
  * UNICARIOCA
@@ -55,6 +57,9 @@ public class WebServico {
 	@EJB
 	ExameBusiness exameBusiness;
 	
+	@EJB
+	ReembolsoBusiness reembolsoBusiness;
+	
 	/* * Background:
  * Scenario:
  * Given:
@@ -67,6 +72,19 @@ public class WebServico {
 	public String teste() {
 		// TODO Auto-generated method stub
 		return "TIME C -TESTE DO SERVICE - SOLICIR REEMBOLSO";
+	}
+	
+	
+	@WebMethod
+	public ReembolsoModel solicitacaoDeReembolso(ReembolsoModel r) {
+		// TODO Auto-generated method stub
+		return reembolsoBusiness.soliciaraReembolso(r);
+	}
+	
+	@WebMethod
+	public String solicitarReembolso(String email,String telefone,String endereco,String motivo , String matricula) {
+		// TODO Auto-generated method stub
+		return reembolsoBusiness.solicitacaoDeReembolso(email, telefone, endereco, motivo, matricula);
 	}
 	
 	
