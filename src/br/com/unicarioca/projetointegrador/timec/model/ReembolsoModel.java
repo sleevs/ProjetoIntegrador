@@ -53,9 +53,8 @@ ds_sexo
     @Basic(optional = false)
     @Column(name = "reembolso_id")
 	private Integer reembolsoId ;
-    @Size(max = 45)
     @Column(name = "nm_beneficiario")
-	private String nomeBeneficiario ;
+	private Integer nmBeneficiario ;
     @Column(name = "dt_data")
     @Temporal(TemporalType.DATE)
 	private Date dataReembolso ;
@@ -71,9 +70,6 @@ ds_sexo
     @Size(max = 45)
     @Column(name = "ds_logradouro")
 	private String logradouro ;
-    @Column(name = "data_nascimento")
-    @Temporal(TemporalType.DATE)
-	private Date dataNascimento ;
     @Size(max = 45)
     @Column(name = "telefone")
 	private String telefone ;
@@ -98,14 +94,14 @@ ds_sexo
 
 
 
-	public String getNomeBeneficiario() {
-		return nomeBeneficiario;
+	public Integer getNomeBeneficiario() {
+		return nmBeneficiario;
 	}
 
 
 
-	public void setNomeBeneficiario(String nomeBeneficiario) {
-		this.nomeBeneficiario = nomeBeneficiario;
+	public void setNomeBeneficiario(Integer nomeBeneficiario) {
+		this.nmBeneficiario = nomeBeneficiario;
 	}
 
 
@@ -170,18 +166,6 @@ ds_sexo
 
 
 
-	public Date getDataNascimento() {
-		return dataNascimento;
-	}
-
-
-
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-
-
-
 	public String getTelefone() {
 		return telefone;
 	}
@@ -196,10 +180,13 @@ ds_sexo
 
 	@Override
 	public String toString() {
-		return "ReembolsoModel [reembolsoId=" + reembolsoId + ", nomeBeneficiario=" + nomeBeneficiario
-				+ ", dataReembolso=" + dataReembolso + ", status=" + status + ", motivo=" + motivo + ", email=" + email
-				+ ", logradouro=" + logradouro + ", dataNascimento=" + dataNascimento + ", telefone=" + telefone + "]";
+		return " [ Número da Solicitação de Reembolso :" + reembolsoId + ", Número do Beneficiário :" + nmBeneficiario + ", Data da Solicitação :="
+				+ dataReembolso + ", Status da Solicitação :" + status + ", Motivo :" + motivo + ", Email Solicitante :" + email + ", Endereço :"
+				+ logradouro + ", Telefone :" + telefone + "]";
 	}
+
+
+
 	
 	
 	
