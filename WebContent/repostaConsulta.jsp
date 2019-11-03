@@ -71,7 +71,8 @@
                              <form method="post" action="ReembolsoControle">
 						
 												<div class="book_tabel_item">
-                                               <div class="form-group">
+
+													<div class="form-group">
 													
 														<div class="form-group">
 														<div class="input-group d-flex flex-row">
@@ -81,7 +82,6 @@
 																required="Y" type="text" class="form-control">
 														</div>
 													</div>
-													
 													<div class="form-group">
 														<div class="input-group d-flex flex-row">
 															<input name="nome" placeholder="Nome"
@@ -91,7 +91,6 @@
 														</div>
 														
 													</div>
-													
 															<div class="form-group">
 														<div class="input-group d-flex flex-row">
 															<input name="endereco" placeholder="Endereço"
@@ -100,8 +99,7 @@
 																required="Y" type="text" class="form-control">
 														</div>
 													</div>
-													
-												
+													</div>
 															<div class="form-group">
 														<div class="input-group d-flex flex-row">
 															<input name="telefone" placeholder="Telefone"
@@ -119,14 +117,12 @@
 																required="Y" type="text" class="form-control">
 														</div>
 													</div>
-																	<div class="form-group">
+														<div class="form-group">
 														<div class="input-group d-flex flex-row">
-														
-																<input name="motivo" placeholder="Motivo"
+															<input name="motivo" placeholder="Descreva o Motivo"
 																onfocus="this.placeholder = ''"
-																onblur="this.placeholder = 'Motivo '"
+																onblur="this.placeholder = 'Descreva o Motivo '"
 																required="Y" type="text" class="form-control">
-														</div>
 														</div>
 													</div>
 							<!--

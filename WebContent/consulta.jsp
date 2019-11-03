@@ -28,7 +28,7 @@
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<a class="navbar-brand logo_h" href="index.jsp">Solicitação de Reembolso</a>
+				<a class="navbar-brand logo_h" href="index.jsp">Retornar para páginan Principal</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -37,7 +37,7 @@
 						class="icon-bar"></span>
 				</button>
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse offset"
+						<div class="collapse navbar-collapse offset"
 					id="navbarSupportedContent">
 					<ul class="nav navbar-nav menu_nav ml-auto">
 						<li class="nav-item active"><a class="nav-link"
@@ -68,10 +68,11 @@
 							</div>
 
 							<div class="hotel_booking_table">
-                             <form method="post" action="ReembolsoControle">
+                             <form method="post" action="ConsultaReembolsoControle">
 						
 												<div class="book_tabel_item">
-                                               <div class="form-group">
+
+													<div class="form-group">
 													
 														<div class="form-group">
 														<div class="input-group d-flex flex-row">
@@ -81,54 +82,15 @@
 																required="Y" type="text" class="form-control">
 														</div>
 													</div>
-													
-													<div class="form-group">
-														<div class="input-group d-flex flex-row">
-															<input name="nome" placeholder="Nome"
-																onfocus="this.placeholder = ''"
-																onblur="this.placeholder = 'Nome '"
-																required="Y" type="text" class="form-control">
-														</div>
-														
-													</div>
-													
-															<div class="form-group">
-														<div class="input-group d-flex flex-row">
-															<input name="endereco" placeholder="Endereço"
-																onfocus="this.placeholder = ''"
-																onblur="this.placeholder = 'Endereço '"
-																required="Y" type="text" class="form-control">
-														</div>
-													</div>
-													
-												
-															<div class="form-group">
-														<div class="input-group d-flex flex-row">
-															<input name="telefone" placeholder="Telefone"
-																onfocus="this.placeholder = ''"
-																onblur="this.placeholder = 'Telefone '"
-																required="Y" type="text" class="form-control">
-														</div>
-													</div>
-													
-													<div class="form-group">
-														<div class="input-group d-flex flex-row">
-															<input name="email" placeholder="Email"
-																onfocus="this.placeholder = ''"
-																onblur="this.placeholder = 'Email '"
-																required="Y" type="text" class="form-control">
-														</div>
-													</div>
-																	<div class="form-group">
-														<div class="input-group d-flex flex-row">
-														
-																<input name="motivo" placeholder="Motivo"
-																onfocus="this.placeholder = ''"
-																onblur="this.placeholder = 'Motivo '"
-																required="Y" type="text" class="form-control">
-														</div>
-														</div>
-													</div>
+														<input class="book_now_btn button_hover"
+											
+											type="submit" value="Consultar"/>
+												   
+                   <%
+                   
+                   String resultado = (String) session.getAttribute("CONSULTA");
+                   out.println(resultado);
+                   %>
 							<!--
 														<div class="input-group d-flex flex-row">
 															<input name="matricula" placeholder="NÃºmero da ApÃ³lice"
@@ -223,9 +185,7 @@
                                                   //onclick="validacaoEmail(document.getElementsByName('Email'))" 
                                                    //href="DadosPagamento.html"
                                                    %>
-										<input class="book_now_btn button_hover"
-											
-											type="submit" value="Gerar Solicitação"/>
+									
 									</div>
 								</div>
 								</form>
