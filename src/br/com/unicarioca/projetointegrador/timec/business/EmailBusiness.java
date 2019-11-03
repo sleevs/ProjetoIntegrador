@@ -41,9 +41,12 @@ public class EmailBusiness  {
 	public void enviarEmail(String emailDestino, String descricao, String assunto) {
 
 		
+		
+		  String meuEmail = "";
+		  String senha = "";
 	      String host="smtp.gmail.com";  
-		  final String user="email";
-		  final String password="senha";  
+		  final String user="";
+		  final String password="";  
 		    
 		  String to= emailDestino;
 		  
